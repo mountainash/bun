@@ -6168,7 +6168,7 @@ pub const PackageManager = struct {
                     ;
                     Output.pretty("\n" ++ intro_text, .{});
                     Output.flush();
-                    Output.pretty("\n<b>Flags:<r>", .{});
+                    Output.pretty("\n\n<b>Flags:<r>", .{});
                     Output.flush();
                     clap.simpleHelp(&PackageManager.add_params);
                     Output.pretty("\n\n" ++ outro_text, .{});
@@ -6178,6 +6178,7 @@ pub const PackageManager = struct {
                     const intro_text =
                         \\<b>Usage<r>: <b><green>bun update<r> <cyan>[flags]<r>
                         \\  Update all dependencies to most recent versions within the version range in package.json
+                        \\
                     ;
                     const outro_text =
                         \\<b>Examples:<r>
@@ -6227,10 +6228,11 @@ pub const PackageManager = struct {
                     const intro_text =
                         \\<b>Usage<r>: <b><green>bun remove<r> <cyan>[flags]<r> \<pkg\> [...\<pkg\>]
                         \\  Remove a package from package.json and uninstall from node_modules
+                        \\
                     ;
                     const outro_text =
                         \\<b>Examples:<r>
-                        \\  <d>Add a dependency from the npm registry<r>
+                        \\  <d>Remove a dependency<r>
                         \\  <b><green>bun remove ts-node<r>
                         \\
                         \\Full documentation is available at <magenta>https://bun.sh/docs/cli/install#bun-remove<r>
@@ -6246,6 +6248,7 @@ pub const PackageManager = struct {
                 Subcommand.link => {
                     const intro_text =
                         \\<b>Usage<r>: <b><green>bun link<r> <cyan>[flags]<r> [\<package\>]
+                        \\
                     ;
                     const outro_text =
                         \\<b>Examples:<r>
